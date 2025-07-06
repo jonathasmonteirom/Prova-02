@@ -1,13 +1,85 @@
-def q1(cidades):
+def q1(): #cidades
+
+    def cidades(idades):
+    
+        cidades = []
+        for cidade, idade in idades.items():
+            if idade > 100:
+                cidades.append(cidade)
+        return cidades
+
+    idades = {
+        "João Pessoa": 432,
+        "Campina Grande": 325,
+        "Santa Rita": 68,
+        "Patos": 289,
+        "Bayeux": 54,
+        "Sousa": 178,
+        "Cajazeiras": 201,
+        "Cabedelo": 45,
+        "Guarabira": 122,
+        "Areia": 177,
+        }
+
+    resultado = cidades(idades)
+    print(resultado)
     return [] 
 
-def q2(lista1, lista2):
+def q2(): #lista1, lista2
+
+    def listas(lista1, lista2):
+        unidas = lista1 + lista2
+
+        positivos = [x for x in unidas if x > 0]
+
+        soma = sum(positivos)
+
+        ordenada = sorted(positivos)
+
+        return (soma, ordenada)
+
+    lista1 = [3, -5, 12, 0, -8, 7]
+    lista2 = [-2, 10, -1, 6, -4, 9]
+
+    resultado = listas(lista1, lista2)
+    print(resultado)
     return []
 
-def q3(valores):
+def q3(): #valores
+    def valores(listaEntrada):
+        lista = []
+        for valor in listaEntrada:
+            if valor == 0:
+                break
+            lista.append(valor)
+        return lista
+
+    def processaLista(lista):
+        pares = [num for num in lista if num % 2 == 0]
+        impares = [num for num in lista if num % 2 != 0]
+        return pares, impares
+
+    entrada = [2, 4, 6, 8, 10, 12, 14, 0]
+    valores = valores(entrada)
+    pares, impares = processaLista(valores)
+    print("Lista de Pares:", pares)
+    print("Lista de Ímpares:", impares)
     return [],[]
 
-def q4(valores):
+def q4(): #valores
+    def organizarAlturas(lista):
+        ordenado = sorted(lista)
+        return [ordenado[1], ordenado[2], ordenado[0]]
+
+    def formatarAlturas(lista):
+        return [f"{altura:.2f}" for altura in lista]
+
+    valores = [30, 20, 10]
+
+    alturasOrganizadas = organizarAlturas(valores)
+    alturasFormatadas = formatarAlturas(alturasOrganizadas)
+
+    print('[' + ', '.join(f'"{a}"' for a in alturasFormatadas) + ']')
     return []
 
 def main():
