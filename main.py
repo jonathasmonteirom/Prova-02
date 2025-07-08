@@ -112,6 +112,6 @@ def main():
 
 
 if __name__ == "__main__":
-    q3()
+    q1()
 
 
