@@ -1,5 +1,4 @@
 def q1(): #cidades
-
     def cidades(idades):
     
         cidades = []
@@ -26,7 +25,6 @@ def q1(): #cidades
     return [] 
 
 def q2(): #lista1, lista2
-
     def listas(lista1, lista2):
         unidas = lista1 + lista2
 
@@ -46,24 +44,30 @@ def q2(): #lista1, lista2
     return []
 
 def q3(): #valores
-    def valores(listaEntrada):
+    def lerValores():
         lista = []
-        for valor in listaEntrada:
+        while True:
+            valor = int(input("Digite um número (0 para parar): "))
             if valor == 0:
                 break
             lista.append(valor)
         return lista
 
     def processaLista(lista):
-        pares = [num for num in lista if num % 2 == 0]
-        impares = [num for num in lista if num % 2 != 0]
+        pares = []
+        impares = []
+        for num in lista:
+            if num % 2 == 0:
+                pares.append(num)
+            else:
+                impares.append(num)
         return pares, impares
 
-    entrada = [2, 4, 6, 8, 10, 12, 14, 0]
-    valores = valores(entrada)
-    pares, impares = processaLista(valores)
-    print("Lista de Pares:", pares)
-    print("Lista de Ímpares:", impares)
+    valores = lerValores()
+    listaPares, listaImpares = processaLista(valores)
+
+    print("Lista de Pares:", listaPares)
+    print("Lista de Ímpares:", listaImpares)
     return [],[]
 
 def q4(): #valores
@@ -108,6 +112,6 @@ def main():
 
 
 if __name__ == "__main__":
-    q4()
+    q3()
 
 
